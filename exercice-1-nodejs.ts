@@ -23,3 +23,5 @@ function getAdults(users: user[]){
   
   return adults
 }
+
+console.log(getAdults(users))

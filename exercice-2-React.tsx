@@ -76,13 +76,15 @@ function App() {
         {error && <p className='error'>{ error }</p> /*Affiche les messages d'erreur */} 
       </div>
       <main>
-        <ul>
-          {tasks.map((task)=> (
-            <li key={task.name}>
-              <label>{task.name} <input type='checkbox' checked={task.done} onChange={() => onCheck(task.name, !task.done)}></input></label>
-            </li>
-          ))}
-        </ul>
+        {!allDone && (
+          <ul>
+            {tasks.map((task)=> (
+              <li key={task.name}>
+                <label>{task.name} <input type='checkbox' checked={task.done} onChange={() => onCheck(task.name, !task.done)}></input></label>
+              </li>
+            ))}
+          </ul>
+        )}
         {allDone && <p>Toutes les tâches sont terminées 🎉</p>}
       </main>
     </>
